@@ -2,7 +2,7 @@
 
 namespace Checkers.Test
 {
-    public class Class1
+    public class Tests
     {
     }
 }
