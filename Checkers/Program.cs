@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Checkers
 {
@@ -50,6 +51,17 @@ namespace Checkers
 
     public class Board : IBoard
     {
+        Piece[] white, black;
+        private Piece[] PiecesWithPositions(Color c, params int[] positions)
+        {
+            return positions.Select(v => new Piece(c, v)).ToArray();
+        }
+        public Board()
+        {
+            white = PiecesWithPositions(Color.Black, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+            black = PiecesWithPositions(Color.White, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32);
+        }
+        
         public void Move(IPiece piece, int destination)
         {
             throw new NotImplementedException();
@@ -62,7 +74,11 @@ namespace Checkers
 
         public IEnumerable<int> Pieces(Color color)
         {
-            throw new NotImplementedException();
+            if (color == Color.White)
+            {
+                return white.Select(x => x.Position);
+            }
+            return black.Select(x => x.Position);
         }
 
         public void Promote(IPiece piece)
@@ -78,11 +94,17 @@ namespace Checkers
 
     public class Piece : IPiece
     {
-        public virtual Status Status => throw new NotImplementedException();
+        public Piece(Color c, int pos)
+        {
+            Status = Status.Active;
+            Position = pos;
+            Color = c;
+        }
+        public virtual Status Status { get; set; }
 
-        public virtual Color Color => throw new NotImplementedException();
+        public virtual Color Color { get; private set; }
 
-        public virtual int Position => throw new NotImplementedException();
+        public virtual int Position { get; private set; }
 
        public virtual IEnumerable<int> CapturingMoves(IBoard board)
         {
@@ -130,6 +152,6 @@ namespace Checkers
 
     public class King : Piece
     {
-
+        public King(Color c, int p) : base(c, p) { }
     }
 }

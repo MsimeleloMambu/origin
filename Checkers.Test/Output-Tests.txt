@@ -1,0 +1,14 @@
+﻿[2018/04/12 1:47:45 AM Informational] ------ Load Playlist started ------
+[2018/04/12 1:47:45 AM Informational] ========== Load Playlist finished (0:00:00,0855588) ==========
+[2018/04/12 1:48:02 AM Informational] ------ Run test started ------
+[2018/04/12 1:48:08 AM Informational] NUnit Adapter 3.10.0.21: Test execution started
+[2018/04/12 1:48:08 AM Informational] Running all tests in C:\Users\mambu\Desktop\Computer Sciences\Git Repos\Checkers\Checkers.Test\bin\Debug\netcoreapp2.0\Checkers.Test.dll
+[2018/04/12 1:48:08 AM Informational] NUnit3TestExecutor converted 1 of 1 NUnit test cases
+[2018/04/12 1:48:08 AM Informational] NUnit Adapter 3.10.0.21: Test execution complete
+[2018/04/12 1:48:10 AM Informational] ========== Run test finished: 1 run (0:00:07,2221911) ==========
+[2018/04/12 2:11:53 AM Informational] ------ Run test started ------
+[2018/04/12 2:11:55 AM Informational] NUnit Adapter 3.10.0.21: Test execution started
+[2018/04/12 2:11:55 AM Informational] Running all tests in C:\Users\mambu\Desktop\Computer Sciences\Git Repos\Checkers\Checkers.Test\bin\Debug\netcoreapp2.0\Checkers.Test.dll
+[2018/04/12 2:11:55 AM Informational] NUnit3TestExecutor converted 1 of 1 NUnit test cases
+[2018/04/12 2:11:55 AM Informational] NUnit Adapter 3.10.0.21: Test execution complete
+[2018/04/12 2:11:55 AM Informational] ========== Run test finished: 1 run (0:00:01,7662535) ==========
