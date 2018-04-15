@@ -118,7 +118,39 @@ namespace Checkers
 
         public virtual IEnumerable<int> NormalMoves(IBoard board)
         {
-            throw new NotImplementedException();
+            List<int> result = new List<int>();
+            int col = (Position - 1) % 4;
+            int row = (Position - 1) / 4;
+            bool sideSpace = (col == 0 && row % 2 == 1) || (col == 3 && row % 2 == 0);
+            if (Color == Color.Black)
+            {
+                int next = Position + 3;
+                if (row % 2 == 0 || col == 0) next++;
+                if (next <= 32 && board.Occupant(next) == null)
+                {
+                    result.Add(next);
+                }
+                next++;
+                if (!sideSpace && next <= 32 && board.Occupant(next) == null)
+                {
+                    result.Add(next);
+                }
+            }
+            else
+            {
+                int next = Position - 3;
+                if (row % 2 == 1 || col == 3) next--;
+                if (next >= 1)
+                {
+                    result.Add(next);
+                }
+                next--;
+                if (!sideSpace && next >= 1 && board.Occupant(next) == null)
+                {
+                    result.Add(next);
+                }
+            }
+            return result;
         }
     }
 
